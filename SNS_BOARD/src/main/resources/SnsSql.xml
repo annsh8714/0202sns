@@ -30,3 +30,25 @@
 	</select>
 	
 </mapper>
+
+<mapper namespace = "PictureDao">
+	
+	<select id = "selectAllList" resultType="picture">
+		SELECT * FROM PICTURE
+	</select>
+	
+	<select id = "selectSeq" resultType="picture">
+		SELECT ('pic' || pno.nextval ) as pno FROM dual
+	</select>
+	
+	<select id="selectPicture" parameterType="picture" resultType="picture" >
+		SELECT * FROM PICTURE 
+		<if test = "pno != null "> WHERE PNO = #{pno} </if>
+		<if test = "pdic != null "> WHERE PDIC = #{pdic} </if>
+	</select>
+	
+	<insert id="insertPicture" parameterType="picture">
+		INSERT INTO PICTURE VALUES (#{pno},#{pdic},#{psize},#{pext})
+	</insert>
+
+</mapper>
