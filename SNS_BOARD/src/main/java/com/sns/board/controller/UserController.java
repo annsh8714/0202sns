@@ -51,15 +51,10 @@ public class UserController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping("/home")
-	public String UserInformation(Locale locale, Model model) throws Exception {
-		
-		return "home";
-	}
-	
 	
 	@RequestMapping("/select")
 	public String getUserinfo(Locale locale, Model model, HttpServletRequest request) throws Exception {
+		System.out.println("select controller");
 		String uname=request.getParameter("member_name");
 		model.addAttribute("userinfo", userinfoService.selectUserinfo(uname));
 		return "userinfo/Profile_Information";

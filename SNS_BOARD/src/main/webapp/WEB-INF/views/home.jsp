@@ -20,11 +20,12 @@
          document.search_form.submit();
       }
       
-      function selectBtn(){
-    		document.form1.action = "select";
+      function selectBtn() {
+    	  alert(1);
+    	  document.form1.action = "select";
     		document.form1.submit();
     	} 
-    	function alarmBtn(){
+    function alarmBtn(){
     		document.form1.action = "getevent";
     		document.form1.submit();
     	} 

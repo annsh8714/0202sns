@@ -23,7 +23,7 @@ function modifyBtn(){
 <div id="set" >
  <table>
   <tr>
-   <th align = "left">URL  </th>
+   <th align = "left">ID  </th>
     <th><input type = "text" name = "member_id" id = "member_id" value = "${userinfo.member_id}" style="border:0" readonly> </th>
   </tr>
    <tr>

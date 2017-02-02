@@ -24,5 +24,6 @@
 	
 	<mappers>
 		<mapper resource = "SnsSql.xml" />
+		<mapper resource = "UserSql.xml" />
 	</mappers>
 </configuration>
