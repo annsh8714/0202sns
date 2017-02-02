@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace = "AuctionDao">
+
+	<insert id="insertAuction" parameterType="auction">
+	
+		<selectKey keyProperty="ano" resultType="String" order="BEFORE"> 
+			SELECT 'auction'||lpad(seq_auc.nextval, 3, 0) FROM dual 
+		</selectKey>
+		
+		INSERT INTO AUCTION (ano, uno, acontent, initprice, priceunit) VALUES (#{ano},#{uno},#{acontent}, #{initprice}, #{priceunit})
+	</insert>
+	
+	<insert id="insertHashtag" parameterType="hashtag">
+		INSERT INTO HASHTAG (bno, htagcom) VALUES (#{bno}, #{htagcom})
+	</insert>
+	
+	<select id="searchAuction" resultType="auction" parameterType="search">
+		<if test = 'keyfield.equals("user")'> SELECT * FROM AUCTION  WHERE UNO = #{keyword} order by ANO DESC</if>
+		<if test = 'keyfield.equals("hashtag")'> SELECT * FROM AUCTION WHERE ANO in (select distinct bno from hashtag where htagcom = #{keyword}) order by ANO DESC </if>
+	</select>
+	
+	<select id="searchBoard" resultType="auction" parameterType="search">
+		<if test = 'keyfield.equals("user")'> SELECT * FROM BOARD  WHERE UNO = #{keyword} order by ANO DESC</if>
+		<if test = 'keyfield.equals("hashtag")'> SELECT * FROM BOARD WHERE BNO in (select distinct bno from hashtag where htagcom = #{keyword}) order by BNO DESC </if>
+	</select>
+	
+</mapper>

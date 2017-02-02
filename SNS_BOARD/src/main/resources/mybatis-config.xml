@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<settings>
+		<setting name="logImpl" value="LOG4J"/>
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="com.sns.board.vo.Auction" alias="auction"/>
+		<typeAlias type="com.sns.board.vo.Hashtag" alias="hashtag"/>
+		<typeAlias type="com.sns.board.vo.Search" alias="search"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource = "SnsSql.xml" />
+	</mappers>
+</configuration>
