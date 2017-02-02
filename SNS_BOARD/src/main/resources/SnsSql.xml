@@ -28,5 +28,5 @@
 		<if test = 'keyfield.equals("user")'> SELECT * FROM BOARD  WHERE UNO = #{keyword} order by ANO DESC</if>
 		<if test = 'keyfield.equals("hashtag")'> SELECT * FROM BOARD WHERE BNO in (select distinct bno from hashtag where htagcom = #{keyword}) order by BNO DESC </if>
 	</select>
-	
+
 </mapper>
