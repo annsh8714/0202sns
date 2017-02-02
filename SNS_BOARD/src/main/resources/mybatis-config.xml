@@ -15,9 +15,16 @@
 		<typeAlias type="com.sns.board.vo.Hashtag" alias="hashtag"/>
 		<typeAlias type="com.sns.board.vo.Search" alias="search"/>
 	    <typeAlias type="com.sns.board.vo.Picture" alias="picture"/>	
+		<typeAlias type="com.sns.board.vo.Userinfo" alias="Userinfo"/>	
+		<typeAlias type="com.sns.board.vo.Eventlist" alias="Eventlist"/>
+		<typeAlias type="com.sns.board.vo.Board" alias="Board"/>
+		<typeAlias type="com.sns.board.vo.Picture" alias="Picture"/>
+		<typeAlias type="com.sns.board.vo.Post" alias="Post"/>
+		<typeAlias type="com.sns.board.vo.Comment" alias="Comment"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource = "SnsSql.xml" />
+		<mapper resource = "PictureSql.xml" />
 	</mappers>
 </configuration>
