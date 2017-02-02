@@ -4,6 +4,7 @@
 <head>
    <title>MAIN</title>
    <script type="text/javascript">
+//성혁
       function add_auc_board() {
           var div = document.createElement('div');
           div.innerHTML = document.getElementById('Auction').innerHTML;
@@ -19,7 +20,7 @@
          document.search_form.action = 'search';
          document.search_form.submit();
       }
-      
+//성준이형
       function selectBtn() {
     	  alert(1);
     	  document.form1.action = "select";
@@ -37,6 +38,25 @@
     		document.form1.action = "getpost";
     		document.form1.submit();
     	}
+//준우
+    	function AttachPicture(input){
+			window.open('Ex2', 'testWindow', 'width=300, height=300, scrollbars=yes', '_blank');
+ 			readURL(input); 
+ 		}
+
+		function readURL(input) {
+			document.getElementById("blah").style.display='block';
+			document.getElementById("blah2").style.display='block';
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("blah").src = e.target.result;
+            }
+                reader.readAsDataURL(input.files[0]);
+            }
+            
+        }
    </script>
    
    <style>
@@ -289,7 +309,22 @@
 		</form>
       <div id="center_view">
          <b>Center_view</b>
-         <div id="normal_board"> NORMAL </div>
+ 		 <div id="normal_board"> NORMAL
+			<div id="board_creator">
+				<div id="text_line">
+					<textarea name="content" rows="5" cols="40" >아무거나 적어보세요.
+					</textarea>																						
+				</div>
+				<button id="photo_attach_button" Style="width:88px;height:25px" Onclick="AttachPicture(this)">사진첨부
+				</button>
+				<button id="photo_attach_button" Style="width:88px;height:25px" Onclick="HashTag()">태그하기
+				</button>
+				<button id="photo_attach_button" Style="width:88px;height:25px" Onclick="PrivacyStatus()">공개범위
+				</button>
+				<button id="photo_attach_button" Style="width:88px;height:25px" Onclick="UploadtoBoard()">게시
+				</button>
+			</div>
+	     </div>
          <div id="auction_board"> AUCTION
             <form method='post' name='auction_form'>
                <div id="board_creator">

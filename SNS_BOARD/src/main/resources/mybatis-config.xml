@@ -25,5 +25,6 @@
 	<mappers>
 		<mapper resource = "SnsSql.xml" />
 		<mapper resource = "UserSql.xml" />
+		<mapper resource = "PictureSql.xml" />
 	</mappers>
 </configuration>
